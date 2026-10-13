@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def by_day(schedule: list[tuple[str, str]]) -> dict[str, list[str]]:
     result = defaultdict(list)
     for course, day in schedule:
