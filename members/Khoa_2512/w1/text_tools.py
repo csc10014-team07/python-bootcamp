@@ -8,7 +8,6 @@ def word_count(text: str) -> dict[str, int]:
                 count+=1
         thisdict.update({x: count})
     return thisdict
- . , ! ? ; :
 def top_k(text:str, k:int)->list[tuple[str, int]]:
     my_dict=word_count(text)
     mylist=list(my_dict.items())
