@@ -17,7 +17,7 @@ def summary(scores: list[float]) -> dict:
     else:
         median = (scores[mid - 1] + scores[mid]) / 2
     mean /= n
-    return {"min": minimum, "max": maximum,"mean": mean,"median": median}
+    return {"min": minimum, "max": maximum,"mean": round(mean, 2),"median": round(median, 2)}
     
 grades=list[float]
 print(summary(grades))
