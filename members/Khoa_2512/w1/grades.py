@@ -1,20 +1,23 @@
 def summary(scores: list[float]) -> dict:
     if len(scores)==0:
         raise ValueError
-    min=max=scores[0]
-    mean=median=0
+    minimum=maximum=scores[0]
+    mean=0.0
     for x in scores:
-        if x>max: 
-            max=x
-        if x<min:
-            min=x
+        if x>maximum: 
+            maximum=x
+        if x<minimum:
+            minimum=x
         mean+=x
-    if len(scores)%2:
-        median=scores[len(scores)/2]
+    scores = sorted(scores)
+    n = len(scores)
+    mid = n // 2
+    if n % 2:
+        median = scores[mid]
     else:
-        median=(scores[round(len(scores)/2+0.5)]+scores[round(len(scores)/2+0.5)-1])/2
-    mean/=len(scores)
-    return {"min": min, "max": max,"mean": mean,"median": median}
+        median = (scores[mid - 1] + scores[mid]) / 2
+    mean /= n
+    return {"min": minimum, "max": maximum,"mean": mean,"median": median}
     
 grades=list[float]
 print(summary(grades))
