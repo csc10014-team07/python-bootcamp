@@ -1,4 +1,5 @@
 | Member         | Week | Issue | PR | Reviewer     | Tests | Hours |
+|----------------|------|-------|----|--------------|-------|-------|
 |hoangnhatthi1303|w1    |#21    |#22 |vquang2508-cpu|0/0    |4.0    |
 |Quying2522      |w1    |#3     |#4  |NguyenHuHy    |0/0    |1.5    |
 |Khoa-2512       |w1    |#9     |#10 |Quying2522    |0/0    |4.0    |
