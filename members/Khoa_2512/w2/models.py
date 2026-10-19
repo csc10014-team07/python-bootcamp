@@ -11,7 +11,7 @@ class date:
             case 2:
                 limit=28
                 if self.year%4:
-                    limit=27
+                    limit=29
                 if self.day>limit:
                     raise ValueError("must be valid date")
             case 1,3,5,7,8,10,12:
@@ -35,7 +35,7 @@ class Task:
         if not 1 <= self.importance <= 5:
             raise ValueError("importance must be 1-5")
     def days_left(self, today: date) -> int:
-        itoday=today
+        itoday=date(today.day, today.month, today.year)
         today_val=today.day+today.month*100+today.year*10000
         deadline_val=self.deadline.day+self.deadline.month*100+self.deadline.year*10000
         diff=deadline_val-today_val
@@ -65,6 +65,3 @@ class Task:
 
                 result += 1
         return result
-
-test=Task("fate grand order", 5, 2, date(25, 12, 2007))
-print(test.days_left(date(3, 11,2005)))
