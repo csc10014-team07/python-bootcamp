@@ -1,5 +1,5 @@
-from models import Task
-from models import date
+from .models import Task
+from .models import date
 def load_tasks(path) -> list[Task]:
     task_list: list[Task] = []
     with open(path, "r") as file:
