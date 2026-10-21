@@ -17,7 +17,8 @@ def check_feasible(tasks, available_h: float) -> None:
     if needed_h > available_h:
         raise InfeasiblePlan(needed_h, available_h)
 
-#Test
+
+# Test
 if __name__ == "__main__":
     from dataclasses import dataclass
 
