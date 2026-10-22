@@ -1,5 +1,5 @@
 import pytest
-from translate import transpose  # Lưu ý: Bạn có thể điều chỉnh lại đường dẫn import (ví dụ: from members.ten_thanh_vien.w1.translate import transpose) cho khớp với cấu trúc thư mục thực tế khi review.
+from translate import transpose
 
 def test_transpose_standard_rectangular():
     """Case 1: Ma trận chữ nhật thông thường (2 hàng x 3 cột)."""
