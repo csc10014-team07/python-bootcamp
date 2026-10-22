@@ -9,13 +9,10 @@ def allocate(tasks: list[Task], hours: float) -> list[Block]:
     remaining = hours
     for task in tasks:
         if task.effort_h < 0:
-            raise ValueError(
-                f"Task effort cannot be negative: {task.title}"
-            )
+            raise ValueError(f"Task effort cannot be negative: {task.title}")
         if remaining <= 0:
             break
         given = min(task.effort_h, remaining)
-        if given > 0:
-            blocks.append(Block(task, given))
-            remaining -= given
+        blocks.append(Block(task, given))
+        remaining -= given
     return blocks
