@@ -9,6 +9,7 @@ from .models import Task
 
 
 def load_tasks(path) -> list[Task]:
+
     tasks = []
     expected_header = ["title", "importance", "effort_h", "deadline"]
 
@@ -49,10 +50,8 @@ def load_tasks(path) -> list[Task]:
 
                 tasks.append(task)
 
-            except (ValueError, OverflowError) as error:
-                raise ValueError(
-                    f"Line {line_number}: {error}"
-                ) from error
+            except ValueError as e:
+                raise ValueError(f"line {line_number}: {e}") from e
 
     return tasks
 
