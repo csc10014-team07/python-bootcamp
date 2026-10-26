@@ -1,7 +1,7 @@
+import argparse
+import sys
 from datetime import date, datetime
 from pathlib import Path
-import sys
-import argparse
 
 
 def main() -> None:
