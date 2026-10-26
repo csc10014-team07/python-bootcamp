@@ -13,8 +13,14 @@ class InfeasiblePlan(Exception):
         super().__init__(str(self))
 
     def __str__(self) -> str:
-        needed_str = int(self.needed_h) if int(self.needed_h) == self.needed_h else self.needed_h
-        avail_str = int(self.available_h) if int(self.available_h) == self.available_h else self.available_h
+        needed_str = (
+            int(self.needed_h) if int(self.needed_h) == self.needed_h else self.needed_h
+        )
+        avail_str = (
+            int(self.available_h)
+            if int(self.available_h) == self.available_h
+            else self.available_h
+        )
         return (
             f"Infeasible plan: needed {needed_str} hours, "
             f"but only {avail_str} hours available."

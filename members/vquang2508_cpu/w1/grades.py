@@ -9,8 +9,9 @@ def summary(scores: list[float]) -> dict:
         "min": min(scores),
         "max": max(scores),
         "mean": round(statistics.mean(scores), 2),
-        "median": round(statistics.median(scores), 2)
+        "median": round(statistics.median(scores), 2),
     }
+
 
 diem_nhap = [7.5, 9.0, 6.0, 8.0]
 ket_qua = summary(diem_nhap)
