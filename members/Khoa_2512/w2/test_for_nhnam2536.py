@@ -1,5 +1,3 @@
-import pytest
-
 from your_module import insertion_sort
 
 

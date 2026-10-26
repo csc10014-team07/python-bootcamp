@@ -1,6 +1,8 @@
+"""Command-line tool for planning tasks within an available time budget."""
 
 import argparse
 import sys
+from collections.abc import Sequence
 from datetime import date as PythonDate
 from pathlib import Path
 
@@ -8,14 +10,13 @@ from members.Khoa_2512.w2.io_utils import load_tasks
 from members.Khoa_2512.w2.models import Task
 
 
-def days_until(deadline, today: PythonDate) -> int:
-    deadline_date = PythonDate(
-        deadline.year, deadline.month, deadline.day
-    )
-    return (deadline_date - today).days
+def days_until(deadline: PythonDate, today: PythonDate) -> int:
+    """Return the number of days between today and the deadline."""
+    return (deadline - today).days
 
 
 def priority(task: Task, today: PythonDate) -> float:
+    """Calculate a task's priority based on importance, urgency, and effort."""
     days_left = days_until(task.deadline, today)
     urgency = 10 if days_left <= 0 else 1 / days_left
 
@@ -27,20 +28,17 @@ def plan_tasks(
     hours: float,
     today: PythonDate,
 ) -> list[Task]:
+    """Select tasks that fit within the available hours, prioritizing urgency."""
     if hours <= 0:
         raise ValueError("hours must be greater than 0")
 
-    candidates = [
-        task for task in tasks
-        if task.effort_h > 0
-    ]
-
+    candidates = [task for task in tasks if task.effort_h > 0]
     candidates.sort(
         key=lambda task: priority(task, today),
         reverse=True,
     )
 
-    selected = []
+    selected: list[Task] = []
     remaining = hours
 
     for task in candidates:
@@ -51,7 +49,8 @@ def plan_tasks(
     return selected
 
 
-def parse_args():
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
+    """Parse and validate command-line arguments."""
     parser = argparse.ArgumentParser(
         description="Plan tasks within an available time budget."
     )
@@ -71,7 +70,7 @@ def parse_args():
         help="Today's date (default: current date)",
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.hours <= 0:
         parser.error("--hours must be greater than 0")
@@ -79,7 +78,8 @@ def parse_args():
     return args
 
 
-def main():
+def main() -> int:
+    """Run the task planner and return an exit code."""
     args = parse_args()
 
     if not Path(args.file).is_file():
