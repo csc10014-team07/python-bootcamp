@@ -1,4 +1,6 @@
 import string
+
+
 def word_count(text: str) -> dict[str, int]:
     text = text.lower()
     translator = str.maketrans("", "", string.punctuation)

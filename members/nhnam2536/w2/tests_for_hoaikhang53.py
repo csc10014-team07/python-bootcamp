@@ -1,4 +1,3 @@
-import pytest
 
 # Import các hàm từ thư mục bài làm W1 của hoaikhang53
 from members.hoaikhang53.w1.translate import two_sum
