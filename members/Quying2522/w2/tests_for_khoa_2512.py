@@ -1,9 +1,6 @@
 import sys
 from pathlib import Path
 
-import pytest
-
-
 MEMBERS = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(MEMBERS / "Khoa_2512" / "w1"))
 

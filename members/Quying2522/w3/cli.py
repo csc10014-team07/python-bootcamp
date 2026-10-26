@@ -7,7 +7,6 @@ from members.Quying2522.w2.models import Task
 
 
 def prioritise(tasks: list[Task], today: date) -> list[Task]:
-    """Điểm = importance / days_left (tối thiểu 1 ngày), cao xếp trước."""
     return sorted(
         tasks,
         key=lambda t: t.importance / max(1, t.days_left(today)),
@@ -16,7 +15,6 @@ def prioritise(tasks: list[Task], today: date) -> list[Task]:
 
 
 def allocate(tasks: list[Task], hours: float) -> list[tuple[Task, float]]:
-    """Greedy: task đứng trước nhận tối đa có thể, hết giờ thì dừng."""
     plan = []
     remaining = hours
     for task in tasks:

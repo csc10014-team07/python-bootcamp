@@ -43,7 +43,9 @@ if __name__ == "__main__":
     assert parse_due("Fri", today) == date(2026, 10, 30)
     assert parse_due("friday", today) == date(2026, 10, 30)
     assert parse_due("Sun", today) == date(2026, 11, 1)
-    assert parse_due("Mon", today) == date(2026, 11, 2)  # hôm nay là thứ Hai -> tuần sau
+    assert parse_due("Mon", today) == date(
+        2026, 11, 2
+    )  # hôm nay là thứ Hai -> tuần sau
     assert parse_due("  TOMORROW ", today) == date(2026, 10, 27)
 
     for bad in ["", "next week", "funday", "in x days", "2026-13-40", "30/10/2026"]:

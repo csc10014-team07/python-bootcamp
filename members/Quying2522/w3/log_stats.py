@@ -2,9 +2,8 @@ from collections import Counter, defaultdict
 
 
 def p95(values: list[float]) -> float:
-    """p95 theo nearest-rank: sắp xếp, lấy phần tử thứ ceil(0.95 * n)."""
     ordered = sorted(values)
-    rank = (95 * len(ordered) + 99) // 100  # ceil(0.95 * n) bằng số nguyên
+    rank = (95 * len(ordered) + 99) // 100
     return ordered[rank - 1]
 
 
@@ -27,14 +26,11 @@ if __name__ == "__main__":
     assert result["p95"] == {"/a": 20, "/b": 5}
     assert result["slowest"] == "/a"
 
-    # 1..20 -> phần tử thứ 19; 1..100 -> phần tử thứ 95
     assert analyse([("/x", i) for i in range(1, 21)])["p95"] == {"/x": 19}
     assert analyse([("/x", i) for i in range(1, 101)])["p95"] == {"/x": 95}
 
-    # thứ tự đầu vào không ảnh hưởng
     assert analyse([("/x", 30), ("/x", 10), ("/x", 20)])["p95"] == {"/x": 30}
 
-    # danh sách rỗng
     empty = analyse([])
     assert empty["counts"] == Counter()
     assert empty["p95"] == {}
