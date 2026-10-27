@@ -1,9 +1,21 @@
 from collections import Counter
+from collections.abc import Iterable
 from math import ceil
 
 
-def analyse(pairs) -> dict:
-    """Analyse request counts and p95 latency for each route."""
+def analyse(pairs: Iterable[tuple[str, float]]) -> dict:
+    """Analyse request counts and p95 latency for each route.
+
+    Args:
+        pairs: Iterable of ``(route, latency_ms)`` tuples, one per request.
+
+    Returns:
+        A dict with:
+            * ``"counts"``: number of requests per route.
+            * ``"p95"``: 95th-percentile latency (ms) per route.
+            * ``"slowest"``: the route with the highest p95 latency, or None
+              if there are no requests.
+    """
     counts = Counter()
     latencies = {}
 

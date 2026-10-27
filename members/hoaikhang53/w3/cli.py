@@ -8,7 +8,24 @@ from .dates import parse_due
 
 
 def load_tasks(csv_path: str, today: date) -> list[dict]:
-    """Read tasks from a CSV file and parse their deadlines."""
+    """Read tasks from a CSV file and parse their deadlines.
+
+    The CSV must contain the columns ``title``, ``importance``, ``effort_h``
+    and ``deadline``. Deadlines may be ISO dates, relative dates or weekday
+    names (see ``parse_due``).
+
+    Args:
+        csv_path: Path to the CSV file.
+        today: Reference date used to resolve relative deadlines.
+
+    Returns:
+        A list of task dicts with keys ``title``, ``importance``, ``effort_h``,
+        ``deadline`` (a ``date``) and ``index`` (the row's original position).
+
+    Raises:
+        ValueError: If required columns are missing, a title is empty,
+            ``effort_h`` is negative, or a value cannot be parsed.
+    """
     tasks = []
 
     with open(csv_path, "r", encoding="utf-8-sig", newline="") as file:
@@ -45,7 +62,18 @@ def load_tasks(csv_path: str, today: date) -> list[dict]:
 
 
 def make_plan(tasks: list[dict], hours: float) -> list[tuple[str, float]]:
-    """Allocate available hours to tasks in priority order."""
+    """Allocate available hours to tasks in priority order.
+
+    Tasks are prioritised by earliest deadline, then highest importance, then
+    original CSV order. Tasks with no effort are skipped.
+
+    Args:
+        tasks: Task dicts as returned by ``load_tasks``.
+        hours: Total hours available.
+
+    Returns:
+        A list of ``(title, allocated_hours)`` tuples in priority order.
+    """
     tasks = sorted(
         tasks,
         key=lambda task: (
@@ -73,6 +101,14 @@ def make_plan(tasks: list[dict], hours: float) -> list[tuple[str, float]]:
 
 
 def main() -> int:
+    """Run the command-line interface.
+
+    Parses arguments, loads tasks from the given CSV file, builds a plan for
+    the available hours and prints it.
+
+    Returns:
+        Process exit code: 0 on success, 1 on error.
+    """
     parser = argparse.ArgumentParser(
         description="Create a task plan from a CSV file."
     )

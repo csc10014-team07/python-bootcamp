@@ -2,7 +2,25 @@ from datetime import date, timedelta
 
 
 def parse_due(text: str, today: date) -> date:
-    """Parse a due date from an ISO date, relative date, or weekday name."""
+    """Parse a due date from an ISO date, relative date, or weekday name.
+
+    Supported formats:
+        * ISO dates, e.g. ``"2026-10-30"``
+        * ``"today"`` and ``"tomorrow"``
+        * ``"in N days"`` (or ``"in 1 day"``)
+        * Three-letter weekday names (``"Mon"`` ... ``"Sun"``), resolved to the
+          next occurrence after ``today`` (a full week ahead if today matches).
+
+    Args:
+        text: The date expression to parse.
+        today: The reference date for relative expressions.
+
+    Returns:
+        The resolved due date.
+
+    Raises:
+        ValueError: If the expression is not recognised.
+    """
     text = text.strip()
 
     # 1. Parse an ISO date, e.g. "2026-10-30"

@@ -1,8 +1,28 @@
 def can_register_thesis(credits: int, gpa: float) -> bool:
+    """Check whether a student is eligible to register for the thesis.
+
+    Args:
+        credits: Number of credits the student has earned.
+        gpa: The student's current GPA.
+
+    Returns:
+        True if the student has at least 120 credits and a GPA of at least 2.0,
+        otherwise False.
+    """
     return credits >= 120 and gpa >= 2.0
 
 
 def missing(credits: int, gpa: float) -> list[str]:
+    """List the requirements a student still has to meet for thesis registration.
+
+    Args:
+        credits: Number of credits the student has earned.
+        gpa: The student's current GPA.
+
+    Returns:
+        A list of human-readable messages describing each unmet requirement.
+        The list is empty if all requirements are met.
+    """
     reasons = []
 
     if credits < 120:
