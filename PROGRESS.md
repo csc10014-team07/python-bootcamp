@@ -10,3 +10,4 @@
 |Quying2522      |w2    |#30    |#38 |NguyenHuHy    |3/3    |3.0    |
 |vquang2508-cpu  |w2    |#39     |#40 |hoaikhang53   |5/5    |5    |
 |hoaikhang53     |w2    |#27     |#28 |nhnam2536     |5/5    |3.5  |
+|nhnam2536     |w2    |#31    |#32 |Khoa-2512      |5/5   |3.0    |
