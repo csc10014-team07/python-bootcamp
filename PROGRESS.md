@@ -12,3 +12,4 @@
 |hoaikhang53     |w2    |#27     |#28 |nhnam2536     |5/5    |3.5  |
 |nhnam2536     |w2    |#31    |#32 |Khoa-2512      |5/5   |3.0    |
 |Khoa-2512       |w2    |#25     |#29 |Quying2522    |5/5    |5.0    |
+|NguyenHuHy     |w2    |#41    |#42 |hoangnhatthi1303     |5/5    |3.0    |
