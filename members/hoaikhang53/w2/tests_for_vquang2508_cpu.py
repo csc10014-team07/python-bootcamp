@@ -1,6 +1,6 @@
-import pytest
 
 from translate import binary_search
+
 
 def test_binary_search_finds_middle_element():
     assert binary_search([2, 5, 8, 12, 16, 23, 38], 12) == 3

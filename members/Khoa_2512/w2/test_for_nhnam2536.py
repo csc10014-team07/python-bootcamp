@@ -1,6 +1,6 @@
 import pytest
 
-from your_module import insertion_sort
+from members.nhnam2536.w1.translate import insertion_sort
 
 
 def test_unsorted_list():
