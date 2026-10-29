@@ -13,4 +13,5 @@ def fib(n: int) -> list[int]:
         a, b = b, a + b
     return result
 
-print("fib(100) = ",fib(100))
+
+print("fib(100) = ", fib(100))

@@ -1,5 +1,6 @@
 PUNCTUATION = ".,!?;:"
 
+
 def word_count(text: str) -> dict[str, int]:
     cleaned = text.lower()
     for ch in PUNCTUATION:
@@ -16,5 +17,6 @@ def top_k(text: str, k: int) -> list[tuple[str, int]]:
     # sort by count (descending), then alphabetically (ascending)
     ranked = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
     return ranked[:k]
+
 
 print(top_k("Git is fun. Git is fast!", 2))
