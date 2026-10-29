@@ -15,4 +15,4 @@
 |Khoa-2512       |w2    |#25     |#29 |Quying2522    |5/5    |5.0    |
 |NguyenHuHy     |w2    |#41    |#42 |hoangnhatthi1303     |5/5    |3.0    |
 |nhnam2536     |w3    |#51    |#52 |Khoa-2512      |0/0   |2.0    |
-
+|NguyenHuHy     |w3    |#70    |#71 |hoangnhatthi1303     |3/3    |3.0    |
