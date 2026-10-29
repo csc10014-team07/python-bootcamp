@@ -10,7 +10,8 @@ def missing(credits: int, gpa: float) -> list[str]:
         reasons.append(f"need gpa of at least {2.0}")
     return reasons
 
-print(can_register_thesis(118, 2.5)) 
-print(missing(118, 2.5))              
-print(missing(100, 1.5))              
+
+print(can_register_thesis(118, 2.5))
+print(missing(118, 2.5))
+print(missing(100, 1.5))
 print(missing(120, 2.0))
