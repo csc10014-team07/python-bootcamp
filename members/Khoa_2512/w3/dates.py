@@ -51,5 +51,5 @@ def parse_due(text: str, today: date) -> date:
 
     try:
         return date.fromisoformat(data)
-    except:
+    except ValueError:
         raise ValueError("Format not recognized.")
