@@ -9,6 +9,7 @@ from shared.study_planner.__main__ import main
 @pytest.fixture
 def fixed_today(monkeypatch):
     """Make the CLI use a predictable date during tests."""
+
     class FixedDate(date):
         @classmethod
         def today(cls):
@@ -98,8 +99,7 @@ def test_main_invalid_csv_value_reports_error(tmp_path, capsys):
     """Invalid numeric data in the CSV should produce a readable error."""
     csv_file = tmp_path / "invalid.csv"
     csv_file.write_text(
-        "title,importance,effort_h,deadline\n"
-        "Maths revision,high,3,2026-10-28\n",
+        "title,importance,effort_h,deadline\nMaths revision,high,3,2026-10-28\n",
         encoding="utf-8",
     )
 

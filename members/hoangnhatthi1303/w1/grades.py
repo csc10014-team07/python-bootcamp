@@ -16,12 +16,7 @@ def summary(scores: list[float]) -> dict:
 
     median = round(median, 2)
 
-    return {
-        "min": minimum,
-        "max": maximum,
-        "mean": mean,
-        "median": median
-    }
+    return {"min": minimum, "max": maximum, "mean": mean, "median": median}
 
 
 def main():

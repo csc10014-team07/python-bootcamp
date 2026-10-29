@@ -27,10 +27,7 @@ def analyse(
         counts[route] += 1
         latencies_list[route].append(latencies)
 
-    p95s = {
-        route: p95(latency)
-        for route, latency in latencies_list.items()
-    }
+    p95s = {route: p95(latency) for route, latency in latencies_list.items()}
     slowest = max(p95s, key=p95s.get)
 
     return {"counts": counts, "p95": p95s, "slowest": slowest}

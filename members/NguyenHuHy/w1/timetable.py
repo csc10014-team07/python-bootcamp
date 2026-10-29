@@ -1,4 +1,3 @@
-
 def by_day(entries: list[tuple[str, str]]) -> dict[str, list[str]]:
     groups: dict[str, list[str]] = {}
 

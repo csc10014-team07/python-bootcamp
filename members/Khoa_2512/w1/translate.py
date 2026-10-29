@@ -28,4 +28,3 @@ def primes_up_to_n(n: int) -> list[int]:
 print(primes_up_to_n(100))
 
 """In C++, the return type is a vector; in Python, it is a list."""
-

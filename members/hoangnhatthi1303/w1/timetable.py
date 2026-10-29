@@ -4,18 +4,14 @@ def by_day(courses: list[tuple[str, str]]) -> dict[str, list[str]]:
     for course, day in courses:
         result.setdefault(day, []).append(course)
 
-    for day in result:
-        result[day].sort()
+    for day_courses in result.values():
+        day_courses.sort()
 
     return result
 
 
 def main():
-    courses = [
-        ("CSC10014", "Mon"),
-        ("MTH00003", "Tue"),
-        ("CSC10001", "Mon")
-    ]
+    courses = [("CSC10014", "Mon"), ("MTH00003", "Tue"), ("CSC10001", "Mon")]
 
     print(by_day(courses))
 

@@ -50,13 +50,15 @@ def load_tasks(csv_path: str, today: date) -> list[dict]:
 
             deadline = parse_due(row["deadline"], today)
 
-            tasks.append({
-                "title": title,
-                "importance": importance,
-                "effort_h": effort,
-                "deadline": deadline,
-                "index": index,
-            })
+            tasks.append(
+                {
+                    "title": title,
+                    "importance": importance,
+                    "effort_h": effort,
+                    "deadline": deadline,
+                    "index": index,
+                }
+            )
 
     return tasks
 
@@ -109,9 +111,7 @@ def main() -> int:
     Returns:
         Process exit code: 0 on success, 1 on error.
     """
-    parser = argparse.ArgumentParser(
-        description="Create a task plan from a CSV file."
-    )
+    parser = argparse.ArgumentParser(description="Create a task plan from a CSV file.")
     parser.add_argument("csv_file", help="Path to the tasks CSV file")
     parser.add_argument(
         "--hours",

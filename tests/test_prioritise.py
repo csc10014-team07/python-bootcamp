@@ -1,4 +1,3 @@
-
 from datetime import date, timedelta
 
 from shared.contract import Task
@@ -112,10 +111,10 @@ def test_returns_new_list_without_modifying_original():
 
 def test_mixed_tasks_are_sorted_by_priority_score():
     tasks = [
-        make_task("Task A", 2, 4),   # Score: 0.5
-        make_task("Task B", 3, 2),   # Score: 1.5
+        make_task("Task A", 2, 4),  # Score: 0.5
+        make_task("Task B", 3, 2),  # Score: 1.5
         make_task("Task C", 5, 10),  # Score: 0.5
-        make_task("Task D", 4, 1),   # Score: 4.0
+        make_task("Task D", 4, 1),  # Score: 4.0
     ]
 
     result = prioritise(tasks, TODAY)

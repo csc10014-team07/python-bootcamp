@@ -1,4 +1,3 @@
-
 def transpose(matrix: list[list[int]]) -> list[list[int]]:
     """Return the transpose of a matrix.
 
@@ -11,10 +10,7 @@ def transpose(matrix: list[list[int]]) -> list[list[int]]:
 
 
 def main():
-    matrix = [
-        [1, 2, 3],
-        [4, 5, 6]
-    ]
+    matrix = [[1, 2, 3], [4, 5, 6]]
 
     print("Original matrix:")
     for row in matrix:

@@ -21,11 +21,7 @@ class Task:
 
         return days
 
-task = Task(
-    "DS exam",
-    5,
-    6.0,
-    date(2026, 10, 30)
-)
+
+task = Task("DS exam", 5, 6.0, date(2026, 10, 30))
 
 print(task.days_left(date(2026, 10, 20)))

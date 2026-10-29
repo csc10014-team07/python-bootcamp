@@ -3,7 +3,6 @@ class StudyPlannerError(Exception):
 
 
 class InfeasiblePlan(StudyPlannerError):
-
     def __init__(self, needed_h: float, available_h: float):
         self.needed_h = needed_h
         self.available_h = available_h

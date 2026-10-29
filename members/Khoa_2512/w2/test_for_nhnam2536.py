@@ -1,5 +1,3 @@
-import pytest
-
 from members.nhnam2536.w1.translate import insertion_sort
 
 

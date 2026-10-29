@@ -61,9 +61,7 @@ class Task:
         itoday = date(today.day, today.month, today.year)
         today_val = today.day + today.month * 100 + today.year * 10000
         deadline_val = (
-            self.deadline.day
-            + self.deadline.month * 100
-            + self.deadline.year * 10000
+            self.deadline.day + self.deadline.month * 100 + self.deadline.year * 10000
         )
         diff = deadline_val - today_val
         if diff <= 0:
@@ -92,4 +90,3 @@ class Task:
 
                 result += 1
         return result
-
