@@ -1,19 +1,44 @@
+"""Date parsing utilities for due dates and task deadlines."""
+
 from datetime import date, timedelta
 
 
 def parse_due(text: str, today: date) -> date:
+    """Parse a deadline expression into a concrete date object.
+
+    Supported formats:
+        - ISO date format (e.g., 'YYYY-MM-DD')
+        - 'today' and 'tomorrow'
+        - 'in N days' or 'in N day'
+        - Weekday names (e.g., 'Mon', 'Monday', 'Fri', 'Friday'), resolving to the
+          next occurrence strictly after today (1 to 7 days ahead).
+
+    Args:
+        text: Date string or relative time expression.
+        today: Reference date for relative calculations.
+
+    Returns:
+        The resolved deadline date.
+
+    Raises:
+        ValueError: If the text expression cannot be recognized as a valid date.
+    """
     text = text.strip().lower()
+
+    if text == "today":
+        return today
 
     if text == "tomorrow":
         return today + timedelta(days=1)
 
-    if text.startswith("in ") and text.endswith(" days"):
-        try:
-            parts = text.split()
-            days = int(parts[1])
-            return today + timedelta(days=days)
-        except (ValueError, IndexError) as err:
-            raise ValueError(f"Định dạng thời gian không hợp lệ: {text}") from err
+    parts = text.split()
+    if (
+        len(parts) == 3
+        and parts[0] == "in"
+        and parts[1].isdigit()
+        and parts[2] in ("day", "days")
+    ):
+        return today + timedelta(days=int(parts[1]))
 
     try:
         return date.fromisoformat(text)

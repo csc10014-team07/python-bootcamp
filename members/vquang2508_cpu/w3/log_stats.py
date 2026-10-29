@@ -1,16 +1,31 @@
+"""Web server request log statistics analyzer."""
+
 import math
 from collections import Counter, defaultdict
+from collections.abc import Iterable
+from typing import Any
 
 
-def analyse(pairs: list[tuple[str, float]]) -> dict:
-    counts = Counter()
-    route_latencies = defaultdict(list)
+def analyse(pairs: Iterable[tuple[str, float]]) -> dict[str, Any]:
+    """Analyze request counts and 95th-percentile latencies for web routes.
+
+    Args:
+        pairs: Iterable of (route_name, latency_in_ms) tuples.
+
+    Returns:
+        A dictionary containing:
+            - 'counts': dict mapping route name to total request count
+            - 'p95': dict mapping route name to 95th percentile latency (ms)
+            - 'slowest': route name with the highest p95 latency (or None if empty)
+    """
+    counts: Counter[str] = Counter()
+    route_latencies: defaultdict[str, list[float]] = defaultdict(list)
 
     for route, latency in pairs:
         counts[route] += 1
         route_latencies[route].append(latency)
 
-    p95_dict = {}
+    p95_dict: dict[str, float] = {}
     for route, lats in route_latencies.items():
         lats.sort()
         if not lats:

@@ -1,4 +1,16 @@
+"""Algorithm translated from C++ to Python."""
+
+
 def binary_search(a: list[int], key: int) -> int:
+    """Perform binary search on a sorted list of integers.
+
+    Args:
+        a: Sorted list of integers.
+        key: The target value to find.
+
+    Returns:
+        Index of the key if found, or -1 otherwise.
+    """
     lo = 0
     hi = len(a) - 1
     while lo <= hi:
@@ -12,12 +24,14 @@ def binary_search(a: list[int], key: int) -> int:
     return -1
 
 
-mang_da_sap_xep = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
-gia_tri_tim = 23
-vi_tri = binary_search(mang_da_sap_xep, gia_tri_tim)
+if __name__ == "__main__":
+    mang_da_sap_xep = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+    gia_tri_tim = 23
+    vi_tri = binary_search(mang_da_sap_xep, gia_tri_tim)
 
-print(f"Danh sách: {mang_da_sap_xep}")
-print(f"Tìm kiếm số {gia_tri_tim} ở vị trí index:", vi_tri)
+    print(f"Danh sách: {mang_da_sap_xep}")
+    print(f"Tìm kiếm số {gia_tri_tim} ở vị trí index:", vi_tri)
+
 
 # ------------------------------------
 """
