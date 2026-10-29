@@ -16,3 +16,4 @@
 |NguyenHuHy     |w2    |#41    |#42 |hoangnhatthi1303     |5/5    |3.0    |
 |nhnam2536     |w3    |#51    |#52 |Khoa-2512      |0/0   |2.0    |
 |NguyenHuHy     |w3    |#70    |#71 |hoangnhatthi1303     |3/3    |3.0    |
+|vquang2508-cpu  |w3    |#58     |#59 |hoaikhang53   |3/3    |3    |
