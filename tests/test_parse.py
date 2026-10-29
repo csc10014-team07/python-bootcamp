@@ -1,9 +1,10 @@
 
-import pytest
 from datetime import date
 
-from shared.study_planner.parse import parse_csv
+import pytest
+
 from shared.contract import Task
+from shared.study_planner.parse import parse_csv
 
 
 def test_parse_csv_valid(tmp_path):
