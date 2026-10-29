@@ -3,7 +3,8 @@ from pathlib import Path
 from io_utils import load_tasks
 
 
-def main():
+def main() -> None:
+    """Load tasks from ``tasks.csv`` next to this file and print them."""
     csv_path = Path(__file__).with_name("tasks.csv")
 
     tasks = load_tasks(csv_path)

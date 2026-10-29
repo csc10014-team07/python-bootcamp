@@ -22,6 +22,14 @@ def two_sum(nums: list[int], target: int) -> list[int]:
     
     One difference from C++ version
     Python uses 'in' for dictionary key lookup instead of C++'s find().
+
+    Args:
+        nums: List of integers to search.
+        target: The sum the two numbers must add up to.
+
+    Returns:
+        A list ``[i, j]`` with the indices of the two numbers that add up to
+        ``target``, or an empty list if no such pair exists.
     """
     seen = {}
 

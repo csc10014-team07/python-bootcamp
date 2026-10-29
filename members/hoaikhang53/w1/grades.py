@@ -1,4 +1,16 @@
 def summary(scores: list[float]) -> dict:
+    """Compute summary statistics for a list of scores.
+
+    Args:
+        scores: Non-empty list of numeric scores.
+
+    Returns:
+        A dict with keys "min", "max", "mean" (rounded to 2 decimals) and
+        "median" (rounded to 2 decimals).
+
+    Raises:
+        ValueError: If ``scores`` is empty.
+    """
     if not scores:
         raise ValueError("scores cannot be empty")
 

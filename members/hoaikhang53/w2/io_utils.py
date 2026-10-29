@@ -9,7 +9,21 @@ except ImportError:
     from models import Task
 
 
-def load_tasks(path) -> list[Task]:
+def load_tasks(path: str | Path) -> list[Task]:
+    """Load tasks from a CSV file.
+
+    The CSV must have exactly the header ``title,importance,effort_h,deadline``
+    and deadlines in ISO format (``YYYY-MM-DD``).
+
+    Args:
+        path: Path to the CSV file.
+
+    Returns:
+        A list of ``Task`` objects, one per data row.
+
+    Raises:
+        ValueError: If the header is invalid or any row cannot be parsed.
+    """
     tasks = []
 
     with open(path, "r", encoding="utf-8", newline="") as file:
@@ -36,7 +50,15 @@ def load_tasks(path) -> list[Task]:
     return tasks
 
 
-def save_json(tasks: list[Task], path) -> None:
+def save_json(tasks: list[Task], path: str | Path) -> None:
+    """Save tasks to a JSON file.
+
+    Deadlines are written as ISO-formatted date strings.
+
+    Args:
+        tasks: The tasks to save.
+        path: Destination path of the JSON file.
+    """
     data = [
         {
             "title": task.title,
