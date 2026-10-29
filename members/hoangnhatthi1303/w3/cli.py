@@ -1,4 +1,3 @@
-
 """Command-line interface for the study planner."""
 
 import argparse
@@ -40,11 +39,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     try:
-        today = (
-            date.fromisoformat(args.today)
-            if args.today
-            else date.today()
-        )
+        today = date.fromisoformat(args.today) if args.today else date.today()
 
         if args.hours < 0:
             raise ValueError("Available hours cannot be negative")
@@ -76,10 +71,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     for index, block in enumerate(blocks, start=1):
-        print(
-            f"  {index}. {block.task.title} ...... "
-            f"{block.hours:.1f} h"
-        )
+        print(f"  {index}. {block.task.title} ...... {block.hours:.1f} h")
 
     return 0
 

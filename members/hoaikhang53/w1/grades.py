@@ -28,7 +28,8 @@ def summary(scores: list[float]) -> dict:
         "min": min(scores),
         "max": max(scores),
         "mean": mean,
-        "median": round(median, 2)
+        "median": round(median, 2),
     }
+
 
 print(summary([7.5, 9, 6, 8]))

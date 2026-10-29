@@ -1,4 +1,3 @@
-
 from datetime import date
 
 import pytest
@@ -40,8 +39,7 @@ def test_parse_csv_invalid_header(tmp_path):
 def test_parse_csv_invalid_importance(tmp_path):
     path = tmp_path / "tasks.csv"
     path.write_text(
-        "title,importance,effort_h,deadline\n"
-        "DS exam,high,6.0,2026-10-30\n",
+        "title,importance,effort_h,deadline\nDS exam,high,6.0,2026-10-30\n",
         encoding="utf-8",
     )
 

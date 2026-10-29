@@ -1,4 +1,3 @@
-
 def two_sum(nums: list[int], target: int) -> list[int]:
     """
     Problem: Return the indices of two numbers whose sum equals target.
@@ -19,7 +18,7 @@ def two_sum(nums: list[int], target: int) -> list[int]:
 
         return {};
     }
-    
+
     One difference from C++ version
     Python uses 'in' for dictionary key lookup instead of C++'s find().
 

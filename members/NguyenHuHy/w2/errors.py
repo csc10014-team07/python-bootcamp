@@ -24,12 +24,9 @@ def check_feasible(tasks, available_h: float) -> None:
         effort = task.effort_h
 
         if not math.isfinite(effort) or effort < 0:
-            raise ValueError(
-                "task effort_h must be finite and non-negative"
-            )
+            raise ValueError("task effort_h must be finite and non-negative")
 
         needed_h += effort
 
     if needed_h > available_h:
         raise InfeasiblePlan(needed_h, available_h)
-

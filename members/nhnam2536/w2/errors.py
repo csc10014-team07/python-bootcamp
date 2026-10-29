@@ -4,8 +4,7 @@ class InfeasiblePlan(Exception):
         self.available_h = available_h
 
         super().__init__(
-            f"Need {needed_h} hours, "
-            f"but only {available_h} hours available"
+            f"Need {needed_h} hours, but only {available_h} hours available"
         )
 
 

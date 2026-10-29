@@ -7,4 +7,6 @@ def insertion_sort(a: list[int]) -> list[int]:
             j -= 1
         a[j + 1] = key
     return a
+
+
 print(insertion_sort([5, 3, 4, 1]))

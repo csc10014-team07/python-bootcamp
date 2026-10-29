@@ -1,5 +1,4 @@
-import pytest
-from members.Quying2522.w1.translate  import selection_sort
+from members.Quying2522.w1.translate import selection_sort
 
 
 def test_unsorted_list():

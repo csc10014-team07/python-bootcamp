@@ -34,6 +34,7 @@ def missing(credits: int, gpa: float) -> list[str]:
 
     return reasons
 
+
 # Trường hợp A: Đủ điều kiện đăng ký
 print("Case A:")
 credits, gpa = 120, 3.0

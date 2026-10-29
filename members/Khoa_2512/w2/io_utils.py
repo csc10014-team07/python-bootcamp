@@ -35,4 +35,3 @@ def load_tasks(path: str | Path) -> list[Task]:
             except ValueError as e:
                 print(f"Invalid line at index {n}: {line.strip()} — {e}")
     return task_list
-

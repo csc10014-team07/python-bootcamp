@@ -1,4 +1,3 @@
-
 from translate import binary_search
 
 

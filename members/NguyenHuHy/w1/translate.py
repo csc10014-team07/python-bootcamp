@@ -1,31 +1,31 @@
 def selection_sort(a: list[int]) -> None:
     """
-    Sort a list in ascending order using selection sort.
+        Sort a list in ascending order using selection sort.
 
-    Code C++:
+        Code C++:
 
-  void selection_sort(vector<int>& a) {
-      int n = a.size();
+      void selection_sort(vector<int>& a) {
+          int n = a.size();
 
-      for (int i = 0; i < n - 1; i++) {
-          int min_index = i;
+          for (int i = 0; i < n - 1; i++) {
+              int min_index = i;
 
-          for (int j = i + 1; j < n; j++) {
-              if (a[j] < a[min_index]) {
-                  min_index = j;
+              for (int j = i + 1; j < n; j++) {
+                  if (a[j] < a[min_index]) {
+                      min_index = j;
+                  }
               }
+
+              swap(a[i], a[min_index]);
           }
-
-          swap(a[i], a[min_index]);
       }
-  }
 
-Khác biệt so với C++:
-  - Python dùng len(a) để lấy số phần tử, trong khi C++ dùng a.size().
-  - Python không cần khai báo kiểu int cho biến i, j và min_index; C++ cần khai báo kiểu dữ liệu.
-  - Python dùng range() để tạo dãy chỉ số lặp, trong khi C++ dùng vòng lặp for với điều kiện.
-  - Python dùng tuple assignment: a[i], a[min_index] = a[min_index], a[i] để hoán đổi hai phần tử. C++ thường dùng swap().
-  """
+    Khác biệt so với C++:
+      - Python dùng len(a) để lấy số phần tử, trong khi C++ dùng a.size().
+      - Python không cần khai báo kiểu int cho biến i, j và min_index; C++ cần khai báo kiểu dữ liệu.
+      - Python dùng range() để tạo dãy chỉ số lặp, trong khi C++ dùng vòng lặp for với điều kiện.
+      - Python dùng tuple assignment: a[i], a[min_index] = a[min_index], a[i] để hoán đổi hai phần tử. C++ thường dùng swap().
+    """
     n = len(a)
 
     for i in range(n - 1):

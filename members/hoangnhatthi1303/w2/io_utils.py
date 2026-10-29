@@ -2,7 +2,6 @@ import csv
 import json
 from dataclasses import asdict
 from datetime import date
-from pathlib import Path
 
 from .models import Task
 
@@ -23,25 +22,17 @@ def load_tasks(path) -> list[Task]:
                     title=row["title"],
                     importance=int(row["importance"]),
                     effort_h=float(row["effort_h"]),
-                    deadline=date.fromisoformat(row["deadline"])
+                    deadline=date.fromisoformat(row["deadline"]),
                 )
                 tasks.append(task)
             except (ValueError, TypeError, KeyError) as exc:
-                raise ValueError(
-                    f"Invalid row at line {line_number}: {exc}"
-                ) from exc
+                raise ValueError(f"Invalid row at line {line_number}: {exc}") from exc
 
     return tasks
 
 
 def save_json(tasks, path):
-    data = [
-        {
-            **asdict(task),
-            "deadline": task.deadline.isoformat()
-        }
-        for task in tasks
-    ]
+    data = [{**asdict(task), "deadline": task.deadline.isoformat()} for task in tasks]
 
     with open(path, "w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)

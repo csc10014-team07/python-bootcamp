@@ -1,4 +1,3 @@
-
 import argparse
 import sys
 from datetime import date
@@ -11,27 +10,19 @@ from shared.study_planner.render import render
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Create a study plan for tonight."
-    )
+    parser = argparse.ArgumentParser(description="Create a study plan for tonight.")
+
+    parser.add_argument("file", help="Path to the tasks CSV file")
 
     parser.add_argument(
-        "file",
-        help="Path to the tasks CSV file"
-    )
-
-    parser.add_argument(
-        "--hours",
-        type=float,
-        required=True,
-        help="Available study hours"
+        "--hours", type=float, required=True, help="Available study hours"
     )
 
     parser.add_argument(
         "--today",
         type=date.fromisoformat,
         default=date.today(),
-        help="Today's date in YYYY-MM-DD format"
+        help="Today's date in YYYY-MM-DD format",
     )
 
     args = parser.parse_args()

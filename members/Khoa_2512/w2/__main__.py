@@ -1,4 +1,4 @@
-"""Run the task loader and print the loaded tasks.""" 
+"""Run the task loader and print the loaded tasks."""
 
 from .io_utils import load_tasks
 
