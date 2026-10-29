@@ -7,6 +7,7 @@ from .io_utils import load_tasks
 
 
 def main() -> None:
+    """Load sample tasks and print their details to stdout."""
     local_csv = Path(__file__).resolve().parent / "tasks.csv"
     repo_sample_csv = Path(__file__).resolve().parents[3] / "samples" / "tasks.csv"
 

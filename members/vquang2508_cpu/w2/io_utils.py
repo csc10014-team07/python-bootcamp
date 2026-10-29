@@ -20,7 +20,7 @@ def load_tasks(path: str | Path) -> list[Task]:
     path = Path(path)
     tasks: list[Task] = []
 
-    with open(path, "r", encoding="utf-8", newline="") as f:
+    with open(path, encoding="utf-8", newline="") as f:
         reader = csv.reader(f)
         header = next(reader, None)
         if header is None:
@@ -38,7 +38,8 @@ def load_tasks(path: str | Path) -> list[Task]:
                 continue
             if len(row) != 4:
                 raise ValueError(
-                    f"Invalid row on line {line_number}: expected 4 columns, got {len(row)}"
+                    f"Invalid row on line {line_number}: "
+                    f"expected 4 columns, got {len(row)}"
                 )
             try:
                 title = row[0].strip()
@@ -53,9 +54,7 @@ def load_tasks(path: str | Path) -> list[Task]:
                 )
                 tasks.append(task)
             except Exception as exc:
-                raise ValueError(
-                    f"Invalid row at line {line_number}: {exc}"
-                ) from exc
+                raise ValueError(f"Invalid row at line {line_number}: {exc}") from exc
 
     return tasks
 
