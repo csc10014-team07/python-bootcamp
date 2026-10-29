@@ -13,7 +13,8 @@
 |hoaikhang53     |w2    |#27    |#28 |nhnam2536     |5/5    |3.5    |
 |nhnam2536       |w2    |#31    |#32 |Khoa-2512     |5/5    |3.0    |
 |Khoa-2512       |w2    |#25    |#29 |Quying2522    |5/5    |5.0    |
-|NguyenHuHy      |w2    |#41    |#42 |hoangnhatthi1303  |5/   |3.0    |
+|NguyenHuHy      |w2    |#41    |#42 |hoangnhatthi1303  |5/5   |3.0    |
+|hoangnhatthi1303-oss|w3|#66    |#67 |vquang2508-cpu|3/3    |4      |
 |nhnam2536       |w3    |#51    |#52 |Khoa-2512     |3/3    |2.0    |
 |NguyenHuHy      |w3    |#70    |#71 |hoangnhatthi1303  |3/3  |3.0    |
 |Quying2522      |w3    |#50    |#53 |NguyenHuHy     |3/3    |3.0    |
