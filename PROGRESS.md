@@ -7,7 +7,7 @@
 |hoaikhang53     |w1    |#19    |#20 |nhnam2536     |0/0    |4.0    |
 |NguyenHuHy     |w1    |#23    |#24 |hoangnhatthi1303     |0/0    |4.0    |
 |nhnam2536     |w1    |#17    |#16 |Khoa-2512      |0/0    |4.0    |
-|hoangnhatthi1303-oss|w1|#47  |#48  |vquang2508-cpu|8/8     |2      |
+|hoangnhatthi1303-oss|w2|#47  |#48  |vquang2508-cpu|8/8     |2      |
 |Quying2522      |w2    |#30    |#38 |NguyenHuHy    |3/3    |3.0    |
 |vquang2508-cpu  |w2    |#39     |#40 |hoaikhang53   |5/5    |5    |
 |hoaikhang53     |w2    |#27     |#28 |nhnam2536     |5/5    |3.5  |
