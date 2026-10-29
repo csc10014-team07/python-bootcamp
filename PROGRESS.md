@@ -20,3 +20,4 @@
 |Quying2522      |w3    |#50    |#53 |NguyenHuHy     |3/3    |3.0    |
 |vquang2508-cpu  |w3    |#58    |#59 |hoaikhang53   |3/3    |3.0   |
 |Khoa-2512       |w3    |#54    |#55 |Quying2522    |3/3    |3.0   |
+|hoaikhang53     |w3    |#62    |#63 |nhnam2536     |3/3    |2.5    |
